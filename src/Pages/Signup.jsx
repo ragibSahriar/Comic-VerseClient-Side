@@ -1,8 +1,9 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import app from "../Firebase/firebase.config";
+import { setUserId } from "firebase/analytics";
 
 
 const Signup = () => {
@@ -11,6 +12,7 @@ const Signup = () => {
     const googleProvider = new GoogleAuthProvider();
 
     const {createUser} = useContext(AuthContext);
+    const navigate = useNavigate();
 
     const handleSignup = event => {
         event.preventDefault();
@@ -22,6 +24,7 @@ const Signup = () => {
         createUser( email, password)
         .then(result => {
             const user = result.user;
+            navigate("/")
             console.log(user);
         })
         .catch(error => console.log(error))
@@ -35,7 +38,8 @@ const Signup = () => {
         .then(result => {
             const loggedInUser = result.user;
             console.log(loggedInUser);
-            setUser(loggedInUser);
+            navigate("/")
+            setUserId(loggedInUser);
         })
         .catch(error => {
             console.log(error);
@@ -102,7 +106,7 @@ const Signup = () => {
                 {/* gooogle  */}
 
                 <div className="text-center">
-                <button className='bg-green-500 px-7 py-2 rounded text-white' onClick={handleGoogleSignIn}>Google login </button>
+                <button className='bg-green-500 px-7 py-2 rounded text-white' onClick={handleGoogleSignIn}>Google Signup </button>
                 </div>
   
                 <p className="my-4 text-center text-sm">
