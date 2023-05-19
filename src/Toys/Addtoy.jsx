@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { initializeApp } from 'firebase/app';
 import { AuthContext } from '../AuthProvider/AuthProvider';
+import Swal from 'sweetalert2';
 // import default from './../../tailwind.config';
 
 const Addtoy = () => {
@@ -34,6 +35,15 @@ const Addtoy = () => {
         .then(res => res.json())
         .then(data =>{
             console.log(data);
+            if(data.insertedId > 0){
+              Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'Toy Added',
+                handleAddToy: false,
+                timer: 1500
+              })
+            }
         })
 
     }
