@@ -6,6 +6,7 @@ import Login from "../Pages/Login";
 import Addtoy from "../Toys/Addtoy";
 import Alltoy from "../Toys/Alltoy";
 import VIewDetails from "../Toys/ViewDetails/VIewDetails";
+import Erros from "../Erros";
 
 
 const router = createBrowserRouter([
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
             path: "/viewDetails/:id",
             element: <VIewDetails />,
             loader:({params}) => fetch(`http://localhost:5000/addtoy/${params.id}`)
+          },
+          {
+            path: "*",
+            element: <Erros/>,
           },
       ],
     },
