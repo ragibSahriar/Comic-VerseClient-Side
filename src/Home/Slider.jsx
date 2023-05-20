@@ -9,7 +9,7 @@ const Slider = () => {
                 <img  className='' src="https://www.superherotoystore.com/cdn/shop/files/Disney_s_100_Years_of_Wonder_Web_Banner_11zon_1600x.jpg?v=1678268989" alt="" />
 </Marquee>
 
-<div><img src="https://www.superherotoystore.com/cdn/shop/files/Untitled_1800_x_200_px_1600x.jpg?v=1664861842" alt="" /></div>
+<div  data-aos="flip-left" className='pt-7'><img src="https://www.superherotoystore.com/cdn/shop/files/Untitled_1800_x_200_px_1600x.jpg?v=1664861842" alt="" /></div>
         </div>
     );
 };

@@ -15,7 +15,7 @@ const Navbar = () => {
     };
     return (
         <div className='flex justify-between'>
-            <div className="navbar bg-orange-600 text-white font-semi-bold text-xl w-full flex justify-between">
+            <div className="navbar bg-zinc-800 text-white font-semi-bold text-xl w-full flex justify-between">
   <div className="">
     <img className='w-16 rounded-xl' src="https://th.bing.com/th/id/OIP.V4n4RRWhkY_FcPr3ZJ9-CgHaHa?pid=ImgDet&rs=1" alt="" />
   </div>
@@ -38,12 +38,12 @@ const Navbar = () => {
 </div>
   <div>
  {user? (
-            <li className="px-2 py-1 rounded bg-green-800 font-bold list-none btn">
+            <li className="px-2 py-2 text-orange-500 rounded bg-white text-xl font-bold list-none ">
             <button onClick={handleLogOut}>Logout</button>
           </li>
         ) : (
           <Link to="/login">
-            <li className="btn bg-green-700">Login</li>
+            <li className="btn text-green bg-orange-700" >Login</li>
           </Link>
           
           )}

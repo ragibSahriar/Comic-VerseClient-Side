@@ -52,7 +52,7 @@ const Category = () => {
           </div>
         </div>
       </div>
-      <div className="flex">
+      <div className="flex flex-wrap container mx-auto gap-4 justify-around p-6">
         {toys?.map((toy) => (
           <Cat toy={toy}></Cat>
         ))}
