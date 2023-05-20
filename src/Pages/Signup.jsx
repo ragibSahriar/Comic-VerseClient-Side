@@ -1,4 +1,5 @@
-import { useContext } from "react";
+import React from 'react';
+import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
@@ -8,17 +9,29 @@ import { setUserId } from "firebase/analytics";
 
 const Signup = () => {
 
+  // const { RegExp } = window;
+
     const auth = getAuth(app);
     const googleProvider = new GoogleAuthProvider();
 
     const {createUser} = useContext(AuthContext);
     const navigate = useNavigate();
 
+
+    const [error, setError] = useState("");
+
     const handleSignup = event => {
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
+
+
+        if (!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(password)) {
+          setError("Password not valid need 8 char ");
+          return;}
+
+
         console.log(email, password);
         
         createUser( email, password)
@@ -27,7 +40,7 @@ const Signup = () => {
             navigate("/")
             console.log(user);
         })
-        .catch(error => console.log(error))
+        .catch(err => console.log(err))
     }
 
     // google 
@@ -88,9 +101,9 @@ const Signup = () => {
                       placeholder="password"
                       className="input input-bordered"
                     />
+                    <p className="text-red-400 text-center p-2">{error}</p>
                     <label className="label">
                       <a href="#" className="label-text-alt link link-hover">
-                        Forgot password?
                       </a>
                     </label>
                   </div>
@@ -110,7 +123,7 @@ const Signup = () => {
                 </div>
   
                 <p className="my-4 text-center text-sm">
-                  ALready a member{" "}
+                  Already a member{" "}
                   <Link to="/login" className="text-orange-600 font-bold">
                     Login
                   </Link>

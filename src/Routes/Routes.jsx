@@ -8,6 +8,7 @@ import Alltoy from "../Toys/Alltoy";
 import VIewDetails from "../Toys/ViewDetails/VIewDetails";
 import Erros from "../Erros";
 import Mytoy from "../Toys/My Toy/Mytoy";
+import Blogs from "../Pages/Blogs";
 
 
 const router = createBrowserRouter([
@@ -48,6 +49,10 @@ const router = createBrowserRouter([
           {
             path: "/mytoy",
             element: <Mytoy/>,
+          },
+          {
+            path: "/blogs",
+            element: <Blogs/>,
           },
       ],
     },

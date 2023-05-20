@@ -22,11 +22,13 @@ const Category = () => {
         <div>
       <div className="tab-container text-center">
         <div className="text-center w-100 mx-auto">
-          <div className="bg-orange-800">
+          <hr />
+            <h2 className='text-4xl py-4'>Category</h2>
+          <div className="bg-orange-800 py-2">
             <div
               onClick={() => handleTabClick("Marvel")}
               className={`tab  tab2 Marvel text-xl  text-white ${
-                activeTab == "Marvel" ? "text-white btn" : ""
+                activeTab == "Marvel" ? "text-white btn btn-error" : ""
               }`}
             >
               Marvel
@@ -34,7 +36,7 @@ const Category = () => {
             <div
               onClick={() => handleTabClick("DC")}
               className={`tab  tab2 DC  text-xl text-white${
-                activeTab == "DC" ? " bg-danger text-white btn" : ""
+                activeTab == "DC" ? " bg-danger text-white btn btn-error" : ""
               }`}
             >
               DC
@@ -42,7 +44,7 @@ const Category = () => {
             <div
               onClick={() => handleTabClick("Disney")}
               className={`tab  tab3 Disney text-xl text-white ${
-                activeTab == "Disney" ? " bg-danger text-white btn" : ""
+                activeTab == "Disney" ? " bg-danger text-white btn btn-error" : ""
               }`}
             >
               Disney
