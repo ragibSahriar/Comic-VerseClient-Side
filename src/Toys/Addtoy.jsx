@@ -35,13 +35,12 @@ const Addtoy = () => {
         .then(res => res.json())
         .then(data =>{
             console.log(data);
-            if(data.insertedId > 0){
+            if(data.insertedId){
               Swal.fire({
-                position: 'top-end',
+                title: 'Success!',
+                text: 'Toy Added Successfully',
                 icon: 'success',
-                title: 'Toy Added',
-                handleAddToy: false,
-                timer: 1500
+                confirmButtonText: 'Cool'
               })
             }
         })
