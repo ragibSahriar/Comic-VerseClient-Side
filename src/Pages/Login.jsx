@@ -2,11 +2,13 @@ import React, { useContext } from 'react';
 import { AuthContext } from './../AuthProvider/AuthProvider';
 import { Link, useNavigate } from 'react-router-dom';
 import app from '../Firebase/firebase.config';
-import { getAuth } from 'firebase/auth';
+import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
+import { setUserId } from 'firebase/analytics';
 
 
 const Login = () => {
-    
+  const auth = getAuth(app);
+  const googleProvider = new GoogleAuthProvider();
     const {signIn} = useContext(AuthContext)
     const navigate = useNavigate();
   const handleLogin = (event) => {
@@ -24,6 +26,20 @@ const Login = () => {
     })
     .catch (error => console.log(error))
   };
+  const handleGoogleSignIn = () => {
+        
+  signInWithPopup(auth, googleProvider)
+    .then(result => {
+        const loggedInUser = result.user;
+        console.log(loggedInUser);
+        navigate("/")
+        setUserId(loggedInUser);
+    })
+    .catch(error => {
+        console.log(error);
+    })
+    // navigate("/")
+}
     return (
         <div>
         <div className="hero min-h-screen bg-base-200">
@@ -75,6 +91,9 @@ const Login = () => {
                     />
                   </div>
                 </form>
+                <div className="text-center">
+                <button className='bg-green-500 px-7 py-2 rounded text-white' onClick={handleGoogleSignIn}>Google Signup </button>
+                </div>
   
                 <p className="my-4 text-center text-sm">
                   New to ComicVerse?{" "}

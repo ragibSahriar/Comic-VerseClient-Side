@@ -22,7 +22,7 @@ const Navbar = () => {
   <div className="space-x-4 ">
   <Link className='hover:text-black' to="/">Home</Link>
   <Link className='hover:text-black' to="/alltoy">All Toys</Link>
-  <Link className='hover:text-black' to="/">My Toys</Link>
+  <Link className='hover:text-black' to="/mytoy">My Toys</Link>
   <Link className='hover:text-black' to="/addtoy">Add A Toy</Link>
   <Link className='hover:text-black' to="/">Blogs</Link>
  
@@ -34,7 +34,7 @@ const Navbar = () => {
             <button onClick={handleLogOut}>Logout</button>
           </li>
         ) : (
-          <Link to="/signup">
+          <Link to="/login">
             <li className="btn bg-green-700">Login</li>
           </Link>
           

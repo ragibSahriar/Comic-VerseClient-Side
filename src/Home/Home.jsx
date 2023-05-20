@@ -1,5 +1,6 @@
 import React from 'react';
 import Gallery from './Gallery';
+import Category from './Category';
 
 const Home = () => {
     return (
@@ -14,6 +15,7 @@ const Home = () => {
              <div>
                 <Gallery></Gallery>
              </div>
+             <Category></Category>
         </div>
     );
 };
