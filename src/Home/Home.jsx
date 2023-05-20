@@ -2,6 +2,7 @@ import React from 'react';
 import Gallery from './Gallery';
 import Category from './Category';
 import Slider from './Slider';
+import Footer from './Footer';
 
 const Home = () => {
     return (
@@ -18,6 +19,7 @@ const Home = () => {
              </div>
              <Category></Category>
              <Slider></Slider>
+             <Footer></Footer>
         </div>
     );
 };
