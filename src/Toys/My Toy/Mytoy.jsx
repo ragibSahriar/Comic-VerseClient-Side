@@ -24,7 +24,7 @@ const Mytoy = () => {
       }).then((result) => {
         if (result.isConfirmed) {
          
-          fetch(`http://localhost:5000/toy/${_id}`, {
+          fetch(`https://comic-verse-server.vercel.app/toy/${_id}`, {
             method: 'DELETE',
             
           })
@@ -49,7 +49,7 @@ const Mytoy = () => {
     }
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/myToys/${user?.email}`)
+        fetch(`https://comic-verse-server.vercel.app/myToys/${user?.email}`)
         .then(res => res.json())
         .then(data => {
             setToys(data);

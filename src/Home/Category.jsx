@@ -7,7 +7,7 @@ const Category = () => {
     const [activeTab, setActiveTab] = useState("Marvel");
 
     useEffect(() => {
-        fetch(`http://localhost:5000/gettoy/${activeTab}`)
+        fetch(`https://comic-verse-server.vercel.app/gettoy/${activeTab}`)
           .then(res => res.json())
           .then((result) => {
               setToys(result);

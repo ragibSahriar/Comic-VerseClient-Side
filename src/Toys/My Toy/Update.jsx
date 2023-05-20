@@ -23,7 +23,7 @@ const Update = () => {
 
         console.log(updatedToy);
 
-        fetch(`http://localhost:5000/specToys/${_id}`,{
+        fetch(`https://comic-verse-server.vercel.app/specToys/${_id}`,{
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

@@ -36,12 +36,12 @@ const router = createBrowserRouter([
         {
             path: "/alltoy",
             element: <Alltoy />,
-            loader:() => fetch('http://localhost:5000/addtoy')
+            loader:() => fetch('https://comic-verse-server.vercel.app/addtoy')
           },
         {
             path: "/viewDetails/:id",
             element: <VIewDetails />,
-            loader:({params}) => fetch(`http://localhost:5000/addtoy/${params.id}`)
+            loader:({params}) => fetch(`https://comic-verse-server.vercel.app/addtoy/${params.id}`)
           },
           {
             path: "*",
@@ -58,7 +58,7 @@ const router = createBrowserRouter([
           {
             path: "update/:id",
             element: <Update/>,
-            loader:({params}) => fetch(`http://localhost:5000/specToys/${params.id}`)
+            loader:({params}) => fetch(`https://comic-verse-server.vercel.app/specToys/${params.id}`)
           },
       ],
     },

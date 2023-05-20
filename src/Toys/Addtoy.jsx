@@ -25,7 +25,7 @@ const Addtoy = () => {
 
         console.log(addToy);
 
-        fetch('http://localhost:5000/addtoy',{
+        fetch('https://comic-verse-server.vercel.app/addtoy',{
             method: 'POST',
             headers: {
                 'content-Type': 'application/json'
