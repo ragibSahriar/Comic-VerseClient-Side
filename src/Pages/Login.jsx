@@ -40,8 +40,9 @@ const handleLogin = (event) => {
   signIn(email, password)
   .then(result => {
     const user = result.user;
+    navigate(from, { replace: true });
     console.log(user);
-    navigate("/")
+    // navigate("/")
   })
   .catch (error => console.log(error))
 };
