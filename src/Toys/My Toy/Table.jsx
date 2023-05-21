@@ -26,7 +26,7 @@ const Table = ({ toy, handleDelete }) => {
         <td>
           {" "}
           <Link to={`/update/${_id}`}>
-            <button>Update Toy</button>
+            <button className="bg-yellow-700 btn">Update Toy</button>
           </Link>
         </td>{" "}
         <th>

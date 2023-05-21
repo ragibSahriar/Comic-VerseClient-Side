@@ -98,7 +98,7 @@ const handleLogin = (event) => {
                   </div>
                 </form>
                 <div className="text-center">
-                <button className='bg-green-500 px-7 py-2 rounded text-white' onClick={handleGoogleSignIn}>Google Signup </button>
+                <button className='bg-green-500 px-7 py-2 rounded text-white' onClick={handleGoogleSignIn}>Google</button>
                 </div>
   
                 <p className="my-4 text-center text-sm">

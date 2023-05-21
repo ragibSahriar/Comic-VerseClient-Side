@@ -20,19 +20,19 @@ const Navbar = () => {
           <img className="w-16 rounded-xl" src="https://th.bing.com/th/id/OIP.V4n4RRWhkY_FcPr3ZJ9-CgHaHa?pid=ImgDet&rs=1" alt="" />
         </div>
         <div className="space-x-4">
-          <Link className="hover:text-black" to="/">Home</Link>
-          <Link className="hover:text-black" to="/alltoy">All Toys</Link>
+          <Link className="hover:text-orange-600" to="/">Home</Link>
+          <Link className="hover:text-orange-600" to="/alltoy">All Toys</Link>
           {user && (
-            <Link className="hover:text-black" to="/mytoy">
+            <Link className="hover:text-orange-600" to="/mytoy">
               My Toys
             </Link>
           )}
           {user && (
-            <Link className="hover:text-black" to="/addtoy">
+            <Link className="hover:text-orange-600" to="/addtoy">
               Add Toy
             </Link>
           )}
-          <Link className="hover:text-black" to="/blogs">Blogs</Link>
+          <Link className="hover:text-orange-500" to="/blogs">Blogs</Link>
         </div>
         <div>
           {user ? (
