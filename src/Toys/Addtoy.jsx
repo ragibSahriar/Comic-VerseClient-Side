@@ -48,12 +48,12 @@ const Addtoy = () => {
     }
 
     return (
-        <div  data-aos="fade-down" className='bg-gray-800'>
-            <h2 className='text-white text-center text-4xl pt-16'>Add Toy</h2>
+      <div  data-aos="fade-down" className='bg-gray-800 flex justify-center p-8'>
            <form onSubmit={handleAddToy}>
+          <h2 className='text-white text-center text-4xl pt-16'>Add Toy</h2>
           <div className='flex space-x-9 container mx-auto p-8'>
           <div>
-          <div className="w-full max-auto container ml-12">
+          <div className="w-full max-auto container">
   <label className="label">
     <span className="text-white">Picture URL</span>
     
@@ -61,7 +61,7 @@ const Addtoy = () => {
   <input type="text" placeholder="Type here" name='photo' className="input input-bordered w-full max-w-xs" />
   
 </div>
-           <div className="w-full max-auto container ml-12">
+           <div className="w-full max-auto container">
   <label className="label">
     <span className="text-white">Name</span>
     
@@ -69,7 +69,7 @@ const Addtoy = () => {
   <input type="text" placeholder="Type here" name='item' className="input input-bordered w-full max-w-xs" />
   
 </div>
-           <div className="w-full max-auto container ml-12">
+           <div className="w-full max-auto container">
   <label className="label">
     <span className="text-white">Seller Name</span>
     
@@ -77,7 +77,7 @@ const Addtoy = () => {
   <input type="text" placeholder="Type here" name='seller' className="input input-bordered w-full max-w-xs" />
   
 </div>
-           <div className="w-full max-auto container ml-12">
+           <div className="w-full max-auto container">
   <label className="label">
     <span className="text-white">Sub-category</span>
     
@@ -87,7 +87,7 @@ const Addtoy = () => {
 </div>
           </div>
  <div>
- <div className="w-full max-auto container ml-12">
+ <div className="w-full max-auto container">
   <label className="label">
     <span className="text-white">Price</span>
     
@@ -95,7 +95,7 @@ const Addtoy = () => {
   <input type="text" placeholder="Type here" name='price' className="input input-bordered w-full max-w-xs" />
   
 </div>
-           <div className="w-full max-auto container ml-12">
+           <div className="w-full max-auto container">
   <label className="label">
     <span className="text-white">Rating</span>
     
@@ -104,7 +104,7 @@ const Addtoy = () => {
   
 </div>
            
-           <div className="w-full max-auto container ml-12">
+           <div className="w-full max-auto container">
   <label className="label">
     <span className="text-white">Available quantity</span>
     
@@ -112,7 +112,7 @@ const Addtoy = () => {
   <input type="text" placeholder="Type here" name='quantity' className="input input-bordered w-full max-w-xs" />
   
 </div>
-           <div className="w-full max-auto container ml-12">
+           <div className="w-full max-auto container">
   <label className="label">
     <span className="text-white">Description
 </span>
@@ -123,7 +123,7 @@ const Addtoy = () => {
 </div>
  </div>
           </div>
- <input type="submit" value="add toy" className='btn btn-block' />
+ <input type="submit" value="add toy" className='btn btn-block bg-orange-900 text-center' />
            </form>
         </div>
     );
