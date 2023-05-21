@@ -1,6 +1,7 @@
 import React from 'react';
 import Gallery from './Gallery';
 import Category from './Category';
+import Slider from './Slider';
 
 const Home = () => {
     return (
@@ -16,6 +17,7 @@ const Home = () => {
                 <Gallery></Gallery>
              </div>
              <Category></Category>
+             <Slider></Slider>
         </div>
     );
 };

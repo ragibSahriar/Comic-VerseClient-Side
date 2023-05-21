@@ -22,8 +22,16 @@ const Navbar = () => {
   <div className="space-x-4 ">
   <Link className='hover:text-black' to="/">Home</Link>
   <Link className='hover:text-black' to="/alltoy">All Toys</Link>
-  <Link className='hover:text-black' to="/mytoy">My Toys</Link>
-  <Link className='hover:text-black' to="/addtoy">Add A Toy</Link>
+  {user && (
+            <Link className="hover:text-black" to="/mytoy">
+              My Toys
+            </Link>
+          )}
+           {user && (
+            <Link className="hover:text-black" to="/addtoy">
+              Add A Toy
+            </Link>
+          )}
   <Link className='hover:text-black' to="/blogs">Blogs</Link>
  
 
