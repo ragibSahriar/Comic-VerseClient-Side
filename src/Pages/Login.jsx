@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { AuthContext } from './../AuthProvider/AuthProvider';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import app from '../Firebase/firebase.config';
 import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
 import { setUserId } from 'firebase/analytics';
@@ -11,28 +11,17 @@ const Login = () => {
   const googleProvider = new GoogleAuthProvider();
     const {signIn} = useContext(AuthContext)
     const navigate = useNavigate();
-  const handleLogin = (event) => {
-    event.preventDefault();
-    console.log("login");
-    const form = event.target;
-    const email = form.email.value;
-    const password = form.password.value;
-    console.log(email, password);
-    signIn(email, password)
-    .then(result => {
-      const user = result.user;
-      console.log(user);
-      navigate("/")
-    })
-    .catch (error => console.log(error))
-  };
+    const location = useLocation();
+    const from = location.state?.from?.pathname || ('/')
+    
+  
   const handleGoogleSignIn = () => {
         
   signInWithPopup(auth, googleProvider)
     .then(result => {
         const loggedInUser = result.user;
         console.log(loggedInUser);
-        navigate("/")
+        navigate(from, { replace: true });
         setUserId(loggedInUser);
     })
     .catch(error => {
@@ -40,6 +29,23 @@ const Login = () => {
     })
     // navigate("/")
 }
+// const from = location.state?.from?.pathname || "/";
+const handleLogin = (event) => {
+  event.preventDefault();
+  console.log("login");
+  const form = event.target;
+  const email = form.email.value;
+  const password = form.password.value;
+  console.log(email, password);
+  signIn(email, password)
+  .then(result => {
+    const user = result.user;
+    console.log(user);
+    navigate("/")
+  })
+  .catch (error => console.log(error))
+};
+
     return (
         <div>
         <div className="hero min-h-screen bg-base-200">

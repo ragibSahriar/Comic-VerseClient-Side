@@ -10,7 +10,7 @@ import Erros from "../Erros";
 import Mytoy from "../Toys/My Toy/Mytoy";
 import Blogs from "../Pages/Blogs";
 import Update from "../Toys/My Toy/Update";
-
+import Privateroutes from "../AuthProvider/Privateroutes";
 
 const router = createBrowserRouter([
     {
@@ -40,7 +40,7 @@ const router = createBrowserRouter([
           },
         {
             path: "/viewDetails/:id",
-            element: <VIewDetails />,
+            element: <Privateroutes><VIewDetails></VIewDetails></Privateroutes>,
             loader:({params}) => fetch(`https://comic-verse-server.vercel.app/addtoy/${params.id}`)
           },
           {
@@ -60,6 +60,14 @@ const router = createBrowserRouter([
             element: <Update/>,
             loader:({params}) => fetch(`https://comic-verse-server.vercel.app/specToys/${params.id}`)
           },
+          {
+            path: "update/:id",
+            element: <Update/>,
+            loader:({params}) => fetch(`https://comic-verse-server.vercel.app/specToys/${params.id}`)
+          },
+          {
+            
+          }
       ],
     },
   ]);
