@@ -48,7 +48,7 @@ const Addtoy = () => {
     }
 
     return (
-        <div className='bg-gray-800'>
+        <div  data-aos="fade-down" className='bg-gray-800'>
             <h2 className='text-white text-center text-4xl pt-16'>Add Toy</h2>
            <form onSubmit={handleAddToy}>
           <div className='flex space-x-9 container mx-auto p-8'>

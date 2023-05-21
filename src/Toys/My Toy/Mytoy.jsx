@@ -7,6 +7,7 @@ import Table from './Table';
 const Mytoy = () => {
 
     const [toys, setToys] = useState([]);
+    const [sortAscending, setSortAscending] = useState(true);
 
     const {user} = useContext(AuthContext);
 
@@ -48,6 +49,20 @@ const Mytoy = () => {
 
     }
 
+    const handleSort = () => {
+      setSortAscending(!sortAscending);
+      const sortedToys = toys.slice().sort((a, b) => {
+        const priceA = parseFloat(a.price);
+        const priceB = parseFloat(b.price);
+        if (sortAscending) {
+          return priceA - priceB;
+        } else {
+          return priceB - priceA;
+        }
+      });
+      setToys(sortedToys);
+    };
+
     useEffect(()=>{
         fetch(`https://comic-verse-server.vercel.app/myToys/${user?.email}`)
         .then(res => res.json())
@@ -67,7 +82,13 @@ const Mytoy = () => {
 
 
     return (
-        <div>
+      <div   data-aos="fade-down" >
+         <div className="flex justify-end mr-4 my-8 text-xl font-mono">
+  <button className="bg-sky-600 text-white p-4" onClick={handleSort}>
+    Sort by {sortAscending ? 'Ascending' : 'Descending'} Price
+  </button>
+</div>
+
         <div className="overflow-x-auto">
           <table className="table w-full">
             {/* head */}

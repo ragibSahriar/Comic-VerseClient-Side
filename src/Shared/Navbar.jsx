@@ -29,7 +29,7 @@ const Navbar = () => {
           )}
            {user && (
             <Link className="hover:text-black" to="/addtoy">
-              Add A Toy
+              Add Toy
             </Link>
           )}
   <Link className='hover:text-black' to="/blogs">Blogs</Link>
@@ -38,7 +38,7 @@ const Navbar = () => {
 </div>
   <div>
  {user? (
-            <li className="px-2 py-2 text-orange-500 rounded bg-white text-xl font-bold list-none ">
+            <li className="px-2 py-2 text-zinc-900 rounded bg-white text-xl font-bold list-none ">
             <button onClick={handleLogOut}>Logout</button>
           </li>
         ) : (

@@ -62,11 +62,11 @@ const Signup = () => {
 
 
     return (
-        <div>
+        <div >
             <div className="hero min-h-screen bg-base-200">
           <div className="hero-content flex-col lg:flex-row">
-            <div className="mr-12 w-1/2">
-                <img src="https://media.istockphoto.com/id/1281150061/vector/register-account-submit-access-login-password-username-internet-online-website-concept.jpg?s=612x612&w=0&k=20&c=9HWSuA9IaU4o-CK6fALBS5eaO1ubnsM08EOYwgbwGBo=" alt="" />
+            <div  className="mr-12 w-1/4">
+                <img data-aos="fade-down" src="https://media.istockphoto.com/id/1281150061/vector/register-account-submit-access-login-password-username-internet-online-website-concept.jpg?s=612x612&w=0&k=20&c=9HWSuA9IaU4o-CK6fALBS5eaO1ubnsM08EOYwgbwGBo=" alt="" />
               {/* <img src={img} alt="" /> */}
             
             </div>

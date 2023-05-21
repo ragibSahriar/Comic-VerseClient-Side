@@ -3,11 +3,12 @@ import Toycart from "./Toycart";
 
 const Alltoy = () => {
   const toys = useLoaderData();
+  const limitedToys = toys.slice(0, 20);
 
 
   
   return (
-    <div>
+    <div  data-aos="fade-down">
       <div className="overflow-x-auto">
         <table className="table w-full">
           {/* head */}
@@ -64,6 +65,5 @@ const Alltoy = () => {
     </div>
   );
 };
-//   <Toycart key={toys._id} toy={toy}></Toycart>
 
 export default Alltoy;

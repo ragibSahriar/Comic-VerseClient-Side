@@ -47,11 +47,11 @@ const Update = () => {
 
 
     return (
-        <div className='bg-gray-800'>
+        <div className='bg-gray-800 p-3'>
         <h2 className='text-white text-center text-4xl pt-16'>Update Toy - <br /> {item}</h2>
        <form onSubmit={handleAddToy}>
       
-      <div className='flex space-x-9 container mx-auto p-8'>
+      <div className='flex justify-center space-x-9 container mx-auto  p-8'>
       <div>
       <div className="w-full max-auto container ml-12">
 <label className="label">
@@ -123,7 +123,7 @@ const Update = () => {
 </div>
 </div>
       </div>
-<input type="submit" value="Update toy" className='btn btn-block' />
+<input  type="submit" value="Update toy" className='btn btn-block bg-orange-700' />
        </form>
     </div>
     );
