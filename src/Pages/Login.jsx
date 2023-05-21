@@ -51,7 +51,7 @@ const Login = () => {
             
             </div>
             </div>
-            <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+            <div  data-aos="fade-down" className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
               <div className="card-body">
                 <h1 className="text-5xl text-center font-bold text-orange-600">
                   Login
@@ -60,7 +60,7 @@ const Login = () => {
                 {/* form ////////////////  */}
   
                 <form onSubmit={handleLogin}>
-                  <div className="form-control">
+                  <div  data-aos="fade-down" className="form-control">
                     <label className="label">
                       <span className="label-text">E-mail</span>
                     </label>
@@ -83,7 +83,7 @@ const Login = () => {
                     </label>
                   </div>
                   <div className="form-control mt-6">
-                    <input
+                    <input data-aos="fade-up"
                       className="btn btn-primary"
                       type="submit"
                       name="submit"
